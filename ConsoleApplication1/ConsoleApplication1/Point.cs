@@ -12,6 +12,18 @@ namespace ConsoleApplication1
         public int y;
         public char sym;
 
+        /*public Point()
+        {
+            Console.WriteLine("Creating code point");
+        }*/
+
+        public Point(int _x, int _y, char _sym)
+        {
+            x = _x;
+            y = _y;
+            sym = _sym;
+        }
+
         public void draw()
         {
             Console.SetCursorPosition(x, y);
