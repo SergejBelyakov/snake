@@ -10,35 +10,43 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '*');
-            /*p1.x = 1;
-            p1.y = 3;
-            p1.sym = '*';*/
-            p1.draw();
+            int x = 1;
+            Func1(x);
+            Console.WriteLine("Call Func1. x = " + x);
 
-            Point p2 = new Point(3, 5, '#');
-            /*p2.x = 4;
-            p2.y = 5;
-            p2.sym = '#';*/
-            p2.draw();
+            x = 1;
+            Func1(x);
+            Console.WriteLine("Call Func1. x = " + x);
 
-            /*int x1 = 1;
-            int y1 = 3;
-            char sym1 = '*';
-            draw(x1, y1, sym1);*/
+            Point p1 = new Point(1, 4, '%');
+            Move(p1, 10, 10);
+            Console.WriteLine("Call Move. p1.x = " + p1.x + ", p1.y =" + p1.y);
 
-            /*int x2 = 4;
-            int y2 = 5;
-            char sym2 = '#';
-            draw(x2, y2, sym2);*/
+            Point p2 = new Point(4, 6, '&');
+            p1 = p2;
+            p2.x = 8;
+            p2.y = 8;
+            Console.WriteLine("p1 = p2. p1.x = " + p1.x + ", p1.y =" + p1.y + ", p2.x =" + p2.x + ", p2.y =" + p2.y);
+
+            p1 = new Point(1, 6, '*');
+
 
             Console.ReadLine();
         }
-
-        /*static void draw(int x, int y, char sym)
+        public static void Move(Point p, int dx, int dy)
         {
-            Console.SetCursorPosition(x, y);
-            Console.Write(sym);
+            p.x = p.x + dx;
+            p.y = p.y + dy;
+        }
+
+        /*public static void Update(Point p)
+        {
+            p = new Point();
         }*/
+
+        public static void Func1(int value)
+        {
+
+        }
     }
 }
