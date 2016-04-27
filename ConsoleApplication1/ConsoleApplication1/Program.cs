@@ -16,6 +16,10 @@ namespace ConsoleApplication1
             Point p2 = new Point(3, 5, '#');
             p2.draw();
 
+            Point p3 = new Point(6, 4, '^');
+            p3.draw();
+
+
             List<int> numList = new List<int>();
             numList.Add(0);
             numList.Add(1);
@@ -25,17 +29,19 @@ namespace ConsoleApplication1
             int x = numList[0];
             int y = numList[1];
             int z = numList[2];
+            int c = numList[3];
 
-            foreach(int i in numList)
+            foreach (int i in numList)
             {
                 Console.WriteLine(i);
             }
 
-            numList.RemoveAt(0);
+            numList.RemoveAt(3);
 
             List<Point> pList = new List<Point>();
             pList.Add(p1);
             pList.Add(p2);
+            pList.Add(p3);
 
             Console.ReadLine();
         }
