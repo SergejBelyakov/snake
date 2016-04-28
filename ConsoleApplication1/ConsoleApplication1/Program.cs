@@ -10,19 +10,19 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            /*Point p1 = new Point(1, 3, '*');
-            p1.Draw();
+            Console.SetBufferSize(80, 25);
 
-            Point p2 = new Point(3, 5, '#');
-            p2.Draw();*/
+            HorizontalLine topline = new HorizontalLine(0, 78, 0, '+');
+                topline.Drow();
+            HorizontalLine botline = new HorizontalLine(0, 78, 24, '+');
+                botline.Drow();
+            VertikalLine leftline = new VertikalLine(0, 0, 24, '+');
+                leftline.Drow();
+            VertikalLine raightline = new VertikalLine(78, 0, 24, '+');
+                raightline.Drow();
 
-
-
-            HorizontalLine line = new HorizontalLine(5, 10, 8, '&');
-            line.Drow();
-            VertikalLine lineV = new VertikalLine(4, 9, 11, '&');
-            lineV.drow();
-
+            //Point p = new Point(4, 5, '+');
+            //p.Draw();
 
 
             Console.ReadLine();

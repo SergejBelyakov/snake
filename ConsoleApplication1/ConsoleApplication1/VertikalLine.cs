@@ -8,21 +8,21 @@ namespace ConsoleApplication1
 {
     class VertikalLine
     {
-        List<Point> pListV;
+        List<Point> pList;
 
         public VertikalLine(int x, int yTop, int yBot, char sym)
         {
-            pListV = new List<Point>();
+            pList = new List<Point>();
             for (int y = yTop; y <= yBot; y++)
             {
-                Point p3 = new Point(x, y, sym);
-                pListV.Add(p3);
+                Point p = new Point(x, y, sym);
+                pList.Add(p);
             }
                         
         }
-        public void drow()
+        public void Drow()
         {
-            foreach(Point p in pListV)
+            foreach(Point p in pList)
             {
                 p.Draw();
             }
