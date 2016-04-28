@@ -21,8 +21,10 @@ namespace ConsoleApplication1
             VertikalLine raightline = new VertikalLine(78, 0, 24, '+');
                 raightline.Drow();
 
-            //Point p = new Point(4, 5, '+');
-            //p.Draw();
+            Point p = new Point(4, 5, '+');
+            Snyke snake = new Snyke(p, 4, Direktion.RIGHT);
+
+
 
 
             Console.ReadLine();
