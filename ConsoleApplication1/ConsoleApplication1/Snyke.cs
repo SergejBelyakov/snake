@@ -8,8 +8,11 @@ namespace ConsoleApplication1
 {
     class Snyke : Figurs
     {
-        public Snyke(Point tail, int lenght, Direktion direction)
+        Direktion direction;
+
+        public Snyke(Point tail, int lenght, Direktion _direction)
         {
+            direction = _direction;
             pList = new List<Point>();
             for (int i = 0; i < lenght; i++)
             {
@@ -19,5 +22,23 @@ namespace ConsoleApplication1
             }
         }
 
+        internal void Move()
+        {
+            Point tail = pList.First();
+            pList.Remove(tail);
+            Point head = GetNextPoint();
+            pList.Add(head);
+
+            tail.Clear();
+            head.Draw();
+        }
+
+        public Point GetNextPoint()
+        {
+            Point head = pList.Last();
+            Point nexPoint = new Point(head);
+            nexPoint.Move(1, direction);
+            return nexPoint;
+        }
     }
 }

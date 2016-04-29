@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleApplication1
@@ -24,6 +25,19 @@ namespace ConsoleApplication1
             Point p = new Point(4, 5, '+');
             Snyke snyke = new Snyke(p, 4, Direktion.RIGHT);
             snyke.Drow();
+            snyke.Move();
+            Thread.Sleep(300);
+            snyke.Move();
+            Thread.Sleep(300);
+            snyke.Move();
+            Thread.Sleep(300);
+            snyke.Move();
+            Thread.Sleep(300);
+            snyke.Move();
+            Thread.Sleep(300);
+            snyke.Move();
+            Thread.Sleep(300);
+            snyke.Move();
 
 
 
