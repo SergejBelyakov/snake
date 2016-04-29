@@ -25,22 +25,18 @@ namespace ConsoleApplication1
             Point p = new Point(4, 5, '+');
             Snyke snyke = new Snyke(p, 4, Direktion.RIGHT);
             snyke.Drow();
-            snyke.Move();
-            Thread.Sleep(300);
-            snyke.Move();
-            Thread.Sleep(300);
-            snyke.Move();
-            Thread.Sleep(300);
-            snyke.Move();
-            Thread.Sleep(300);
-            snyke.Move();
-            Thread.Sleep(300);
-            snyke.Move();
-            Thread.Sleep(300);
-            snyke.Move();
 
 
-
+            while (true)
+            {
+                if(Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snyke.HandleKey(key.Key);
+                }
+                Thread.Sleep(100);
+                snyke.Move();
+            }
             Console.ReadLine();
         }
     }

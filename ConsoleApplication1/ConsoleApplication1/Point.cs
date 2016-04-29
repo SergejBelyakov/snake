@@ -39,11 +39,11 @@ namespace ConsoleApplication1
             }
             else if (direction == Direktion.UP)
             {
-                y = y + offset;
+                y = y - offset;
             }
             else if (direction == Direktion.DOWN)
             {
-                y = y - offset;
+                y = y + offset;
             }
         }
 
