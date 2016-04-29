@@ -20,7 +20,7 @@ namespace ConsoleApplication1
             sym = _sym;
         }
 
-        public Point(Point p )
+        public Point(Point p)
         {
             x = p.x;
             y = p.y;

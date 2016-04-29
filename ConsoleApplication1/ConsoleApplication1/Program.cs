@@ -22,8 +22,8 @@ namespace ConsoleApplication1
                 raightline.Drow();
 
             Point p = new Point(4, 5, '+');
-            Snyke snake = new Snyke(p, 4, Direktion.RIGHT);
-
+            Snyke snyke = new Snyke(p, 4, Direktion.RIGHT);
+            snyke.Drow();
 
 
 
