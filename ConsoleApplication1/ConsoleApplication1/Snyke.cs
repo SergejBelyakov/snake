@@ -30,7 +30,7 @@ namespace ConsoleApplication1
             pList.Add(head);
 
             tail.Clear();
-            head.Draw();
+            head.Drow();
         }
 
         public Point GetNextPoint()
@@ -39,6 +39,17 @@ namespace ConsoleApplication1
             Point nexPoint = new Point(head);
             nexPoint.Move(1, direction);
             return nexPoint;
+        }
+
+        internal bool IsHitTail()
+        {
+            var head = pList.Last();
+            for (int i = 0; i < pList.Count - 2; i++)
+            {
+                if (head.IsHit(pList[i]))
+                    return true;
+            }
+            return false;
         }
 
         public void HandleKey(ConsoleKey key)

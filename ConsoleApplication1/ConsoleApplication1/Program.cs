@@ -13,29 +13,28 @@ namespace ConsoleApplication1
         {
             Console.SetBufferSize(80, 25);
 
-            HorizontalLine topline = new HorizontalLine(0, 78, 0, '+');
-                topline.Drow();
-            HorizontalLine botline = new HorizontalLine(0, 78, 24, '+');
-                botline.Drow();
-            VertikalLine leftline = new VertikalLine(0, 0, 24, '+');
-                leftline.Drow();
-            VertikalLine raightline = new VertikalLine(78, 0, 24, '+');
-                raightline.Drow();
+            Walls walls = new Walls(80, 25);
+            walls.Draw();
+
 
             Point p = new Point(4, 5, '+');
             Snyke snyke = new Snyke(p, 4, Direktion.RIGHT);
-            snyke.Drow();
+            snyke.Draw();
 
             FoodCreator foodCreator = new FoodCreator(80, 25, '$');
             Point food = foodCreator.CreateFood();
-            food.Draw();
+            food.Drow();
 
-            while(true)
+              while(true)
             {
-                if(snyke.Eat(food))
+                if(walls.IsHit(snyke)||snyke.IsHitTail())
+                {
+                    break;
+                }
+                 if (snyke.Eat(food))
                 {
                     food = foodCreator.CreateFood();
-                    food.Draw();
+                    food.Drow();
                 }
                 else
                 {

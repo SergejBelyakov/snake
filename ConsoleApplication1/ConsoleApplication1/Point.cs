@@ -52,7 +52,7 @@ namespace ConsoleApplication1
             return p.x == this.x && p.y == this.y;
         }
 
-        public void Draw()
+        public void Drow()
         {
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
@@ -61,7 +61,7 @@ namespace ConsoleApplication1
         public void Clear()
         {
             sym = ' ';
-            Draw();
+            Drow();
         }
 
         public override string ToString()
