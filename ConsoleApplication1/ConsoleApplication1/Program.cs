@@ -26,18 +26,30 @@ namespace ConsoleApplication1
             Snyke snyke = new Snyke(p, 4, Direktion.RIGHT);
             snyke.Drow();
 
+            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+            Point food = foodCreator.CreateFood();
+            food.Draw();
 
-            while (true)
+            while(true)
             {
+                if(snyke.Eat(food))
+                {
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snyke.Move();
+                }
+
+                Thread.Sleep(100);
+
                 if(Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
                     snyke.HandleKey(key.Key);
                 }
-                Thread.Sleep(100);
-                snyke.Move();
             }
-            Console.ReadLine();
         }
     }
 }
