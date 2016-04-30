@@ -10,7 +10,7 @@ namespace ConsoleApplication1
     {
         protected List<Point> pList;
 
-        public void Drow()
+        public virtual void Draw()
         {
             foreach (Point p in pList)
             {
